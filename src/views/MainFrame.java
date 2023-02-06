@@ -115,7 +115,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jblTrangChu.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jblTrangChu.setForeground(new java.awt.Color(255, 255, 255));
-        jblTrangChu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/app.png"))); // NOI18N
+        jblTrangChu.setIcon(new javax.swing.ImageIcon("/Icons/app.png")); // NOI18N
         jblTrangChu.setText("Trang chủ");
 
         javax.swing.GroupLayout HomeLayout = new javax.swing.GroupLayout(Home);
@@ -140,7 +140,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jlbNhanKhau.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jlbNhanKhau.setForeground(new java.awt.Color(255, 255, 255));
-        jlbNhanKhau.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/multiple-users-silhouette.png"))); // NOI18N
+        jlbNhanKhau.setIcon(new javax.swing.ImageIcon("/Icons/multiple-users-silhouette.png")); // NOI18N
         jlbNhanKhau.setText("Nhân Khẩu");
 
         javax.swing.GroupLayout NhanKhauBtnLayout = new javax.swing.GroupLayout(NhanKhauBtn);
@@ -164,7 +164,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jlbHoKhau.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jlbHoKhau.setForeground(new java.awt.Color(255, 255, 255));
-        jlbHoKhau.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/home.png"))); // NOI18N
+        jlbHoKhau.setIcon(new javax.swing.ImageIcon("/Icons/home.png")); // NOI18N
         jlbHoKhau.setText("Hộ Khẩu");
 
         javax.swing.GroupLayout HoKhauBtnLayout = new javax.swing.GroupLayout(HoKhauBtn);
@@ -188,7 +188,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jlbThongKe.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jlbThongKe.setForeground(new java.awt.Color(255, 255, 255));
-        jlbThongKe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/increasing-stocks-graphic.png"))); // NOI18N
+        jlbThongKe.setIcon(new javax.swing.ImageIcon("/Icons/increasing-stocks-graphic.png")); // NOI18N
         jlbThongKe.setText("Thống Kê");
 
         javax.swing.GroupLayout ThongKeBtnLayout = new javax.swing.GroupLayout(ThongKeBtn);
@@ -212,7 +212,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jlbCachLy.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jlbCachLy.setForeground(new java.awt.Color(255, 255, 255));
-        jlbCachLy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cachly.png")));
+        jlbCachLy.setIcon(new javax.swing.ImageIcon("/Icons/cachly.png"));
         jlbCachLy.setText("Cách Ly");
 
         javax.swing.GroupLayout CachLyBtnLayout = new javax.swing.GroupLayout(CachLyBtn);
@@ -236,7 +236,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jlbXetNghiem.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jlbXetNghiem.setForeground(new java.awt.Color(255, 255, 255));
-        jlbXetNghiem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/tiemchung.png")));
+        jlbXetNghiem.setIcon(new javax.swing.ImageIcon("/Icons/tiemchung.png"));
         jlbXetNghiem.setText("Xét nghiệm");
 
         javax.swing.GroupLayout XetNghiemBtnLayout = new javax.swing.GroupLayout(XetNghiemBtn);
@@ -260,7 +260,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jlbSucKhoe.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jlbSucKhoe.setForeground(new java.awt.Color(255, 255, 255));
-        jlbSucKhoe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/health.png")));
+        jlbSucKhoe.setIcon(new javax.swing.ImageIcon("/Icons/health.png"));
         jlbSucKhoe.setText("Sức khỏe");
 
         javax.swing.GroupLayout SucKhoeBtnLayout = new javax.swing.GroupLayout(SucKhoeBtn);

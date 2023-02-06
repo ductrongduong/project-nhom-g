@@ -167,7 +167,7 @@ public class DangKyTamVangJFrame extends javax.swing.JFrame {
             }
         });
 
-        availableIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/checked.png"))); // NOI18N
+        availableIcon.setIcon(new javax.swing.ImageIcon("/Icons/checked.png")); // NOI18N
         availableIcon.setEnabled(false);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N

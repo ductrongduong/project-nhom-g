@@ -127,7 +127,7 @@ public class KhaiTuJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/checked.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("/Icons/checked.png")); // NOI18N
         jLabel3.setEnabled(false);
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -143,7 +143,7 @@ public class KhaiTuJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/checked.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon("/Icons/checked.png")); // NOI18N
         jLabel8.setEnabled(false);
 
         jtfSoGiay.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
