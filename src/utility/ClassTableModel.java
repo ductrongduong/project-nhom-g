@@ -13,6 +13,7 @@ import models.TieuSuModel;
  * class dinh nghia cac dang table co trong phan mem
  */
 public class ClassTableModel {
+    //first commit
     // bang cho main frame
     public DefaultTableModel setTableNhanKhau(List<NhanKhauModel> listItem, String[] listColumn) {
         final int columns = listColumn.length;
