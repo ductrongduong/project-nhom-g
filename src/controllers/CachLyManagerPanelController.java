@@ -32,6 +32,7 @@ public class CachLyManagerPanelController {
     private TableModelCachLy tableModelCachLy;
     private JFrame parentJFrame;
     //commit
+    //commit2
     public CachLyManagerPanelController(JPanel jpnView, JTextField jtfSoLuong){
         this.jpnView = jpnView;
         this.jtfsoLuong = jtfSoLuong;
