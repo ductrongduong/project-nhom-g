@@ -1,34 +1,34 @@
 package views;
-import controllers.XetNghiemPanelController;
+import controllers.PhanAnhPanelController;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.swing.JFrame;
-import views.XetNghiemManagerFrame.ThemMoiXetNghiem;
+import views.PhanAnhManagerFrame.ThemMoiPhanAnh;
 /**
  *
  * @author Dat
  */
-public class XetNghiemManagePanel extends javax.swing.JPanel {
+public class PhanAnhManagePanel extends javax.swing.JPanel {
 
     private String field="nhanKhauID";
     private Map<String,String> map;
-    private XetNghiemPanelController controller;
+    private PhanAnhPanelController controller;
     private JFrame parentJFrame;
-    public XetNghiemManagePanel(JFrame parentFrame) {
+    public PhanAnhManagePanel(JFrame parentFrame) {
         map= new HashMap<String,String>();
-        map.put("Xét nghiệm ID", "xetNghiemID");
+        map.put("Phản ánh ID", "phanAnhID");
         map.put("Nhân khẩu ID", "nhanKhauID");
-        map.put("Ngày xét nghiệm", "ngayXetNghiem");
+        map.put("Ngày phản ánh", "ngayPhanAnh");
         map.put("Tên nhân khẩu", "hoTen");
-        map.put("Nơi xét nghiệm", "noiXetNghiem");
-        map.put("Hình thức", "hinhThucXetNghiem");
-        map.put( "Kết quả", "ketQuaXetNghiem");
+        map.put("Nội dung", "noiDung");
+        map.put("Phân loại", "phanLoai");
+        map.put( "Trạng thái", "trangThai");
         this.parentJFrame = parentFrame;
         initComponents();
-        controller = new XetNghiemPanelController(this.tablePanel,this.jtfsoLuong);
+        controller = new PhanAnhPanelController(this.tablePanel,this.jtfsoLuong);
         controller.setParentJFrame(this.parentJFrame);
         controller.setDataTable();
     }
@@ -65,6 +65,8 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
         jCheckBoxketqua2 = new javax.swing.JCheckBox();
         jCheckBoxketqua1 = new javax.swing.JCheckBox();
         resetBtn1 = new javax.swing.JButton();
+        jCheckBoxhinhthuc3 = new javax.swing.JCheckBox();
+        jCheckBoxketqua3 = new javax.swing.JCheckBox();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(855, 570));
@@ -147,13 +149,13 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
         });
 
         jLabel11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel11.setText("Hình thức xét nghiệm");
+        jLabel11.setText("Phân loại");
 
         jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel12.setText("Kết quả xét nghiệm");
+        jLabel12.setText("Trạng thái");
 
         jCheckBoxhinhthuc1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jCheckBoxhinhthuc1.setText("Test nhanh");
+        jCheckBoxhinhthuc1.setText("Phản ánh");
         jCheckBoxhinhthuc1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBoxhinhthuc1ActionPerformed(evt);
@@ -161,7 +163,7 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
         });
 
         jCheckBoxhinhthuc2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jCheckBoxhinhthuc2.setText("PCR");
+        jCheckBoxhinhthuc2.setText("Kiến nghị");
         jCheckBoxhinhthuc2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBoxhinhthuc2ActionPerformed(evt);
@@ -169,8 +171,8 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
         });
 
         jCheckBoxketqua2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jCheckBoxketqua2.setText("Chưa giải quyết");
         jCheckBoxketqua2.setActionCommand("Âm tính");
-        jCheckBoxketqua2.setLabel("Âm tính");
         jCheckBoxketqua2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBoxketqua2ActionPerformed(evt);
@@ -178,8 +180,8 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
         });
 
         jCheckBoxketqua1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jCheckBoxketqua1.setText("Mới ghi nhận");
         jCheckBoxketqua1.setActionCommand("Dương tính");
-        jCheckBoxketqua1.setLabel("Dương tính");
         jCheckBoxketqua1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBoxketqua1ActionPerformed(evt);
@@ -192,6 +194,23 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
         resetBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetBtn1ActionPerformed(evt);
+            }
+        });
+
+        jCheckBoxhinhthuc3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jCheckBoxhinhthuc3.setText("Khiếu nại");
+        jCheckBoxhinhthuc3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxhinhthuc3ActionPerformed(evt);
+            }
+        });
+
+        jCheckBoxketqua3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jCheckBoxketqua3.setText("Đã giải quyết");
+        jCheckBoxketqua3.setActionCommand("Âm tính");
+        jCheckBoxketqua3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxketqua3ActionPerformed(evt);
             }
         });
 
@@ -210,7 +229,7 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
                         .addComponent(timiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(resetBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                         .addComponent(themMoiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,10 +262,14 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(28, 28, 28)
-                                        .addComponent(jCheckBoxhinhthuc2))
+                                        .addComponent(jCheckBoxhinhthuc2)
+                                        .addGap(37, 37, 37)
+                                        .addComponent(jCheckBoxhinhthuc3))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
-                                        .addComponent(jCheckBoxketqua2)))))
+                                        .addComponent(jCheckBoxketqua2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jCheckBoxketqua3)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -291,7 +314,9 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jCheckBoxhinhthuc1))
                         .addComponent(jCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jCheckBoxhinhthuc2))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jCheckBoxhinhthuc2)
+                            .addComponent(jCheckBoxhinhthuc3)))
                     .addComponent(jtfsoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,7 +325,8 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jCheckBoxketqua2)
-                            .addComponent(jCheckBoxketqua1))
+                            .addComponent(jCheckBoxketqua1)
+                            .addComponent(jCheckBoxketqua3))
                         .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(35, 35, 35))
         );
@@ -333,10 +359,10 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
 
     private void themMoiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themMoiBtnActionPerformed
         // TODO add your handling code here:
-        ThemMoiXetNghiem themMoiXetNghiem = new ThemMoiXetNghiem(this.parentJFrame);
-        themMoiXetNghiem.setLocationRelativeTo(null);
-        themMoiXetNghiem.setResizable(false);
-        themMoiXetNghiem.setVisible(true);
+        ThemMoiPhanAnh themMoiPhanAnh = new ThemMoiPhanAnh(this.parentJFrame);
+        themMoiPhanAnh.setLocationRelativeTo(null);
+        themMoiPhanAnh.setResizable(false);
+        themMoiPhanAnh.setVisible(true);
     }//GEN-LAST:event_themMoiBtnActionPerformed
 
     private void jtfsoLuongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfsoLuongActionPerformed
@@ -355,11 +381,14 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
         List<String> listhinhthuc= new ArrayList<>();
         if(jCheckBoxhinhthuc1.isSelected())listhinhthuc.add(jCheckBoxhinhthuc1.getText());
         if(jCheckBoxhinhthuc2.isSelected())listhinhthuc.add(jCheckBoxhinhthuc2.getText());
+        if(jCheckBoxhinhthuc3.isSelected())listhinhthuc.add(jCheckBoxhinhthuc3.getText());
+        
         
         List<String> listketqua= new ArrayList<>();
         if(jCheckBoxketqua1.isSelected())listketqua.add(jCheckBoxketqua1.getText());
         if(jCheckBoxketqua2.isSelected())listketqua.add(jCheckBoxketqua2.getText());
-        
+        if(jCheckBoxketqua3.isSelected())listketqua.add(jCheckBoxketqua3.getText());
+
         controller.thongke(listbool, listdate, listhinhthuc, listketqua);
 
     }//GEN-LAST:event_thongKeBtnActionPerformed
@@ -397,6 +426,14 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
         controller.reset();
     }//GEN-LAST:event_resetBtn1ActionPerformed
 
+    private void jCheckBoxhinhthuc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxhinhthuc3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBoxhinhthuc3ActionPerformed
+
+    private void jCheckBoxketqua3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxketqua3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBoxketqua3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.toedter.calendar.JDateChooser Ngay1;
@@ -406,8 +443,10 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBoxhinhthuc1;
     private javax.swing.JCheckBox jCheckBoxhinhthuc2;
+    private javax.swing.JCheckBox jCheckBoxhinhthuc3;
     private javax.swing.JCheckBox jCheckBoxketqua1;
     private javax.swing.JCheckBox jCheckBoxketqua2;
+    private javax.swing.JCheckBox jCheckBoxketqua3;
     private javax.swing.JComboBox<String> jComboBoxField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;

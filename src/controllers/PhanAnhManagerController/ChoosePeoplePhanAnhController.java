@@ -1,4 +1,4 @@
-package controllers.XetNghiemManagerController;
+package controllers.PhanAnhManagerController;
 
 import Bean.NhanKhauBean;
 import java.awt.BorderLayout;
@@ -24,7 +24,7 @@ import views.infoViews.InfoJframe;
  *
  * @author Dat
  */
-public class ChoosePeopleXetNghiemController {
+public class ChoosePeoplePhanAnhController {
     private JFrame parentJFrame;
     private NhanKhauBean nhanKhauBean;
     private JTextField searchJtf;
@@ -42,7 +42,7 @@ public class ChoosePeopleXetNghiemController {
      * @param selectedJtf
      * @param tableJPanel 
      */
-    public ChoosePeopleXetNghiemController(NhanKhauBean nhanKhauBean, JTextField searchJtf, JTextField selectedJtf, JPanel tableJPanel, JFrame parenJFrame) {
+    public ChoosePeoplePhanAnhController(NhanKhauBean nhanKhauBean, JTextField searchJtf, JTextField selectedJtf, JPanel tableJPanel, JFrame parenJFrame) {
         this.parentJFrame = parenJFrame;
         this.nhanKhauBean = nhanKhauBean;
         this.searchJtf = searchJtf;

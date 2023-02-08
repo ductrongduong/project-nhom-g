@@ -1,6 +1,6 @@
-package views.XetNghiemManagerFrame;
+package views.PhanAnhManagerFrame;
 import Bean.NhanKhauBean;
-import controllers.XetNghiemManagerController.ChoosePeopleXetNghiemController;
+import controllers.PhanAnhManagerController.ChoosePeoplePhanAnhController;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
@@ -9,25 +9,25 @@ import javax.swing.JOptionPane;
  *
  * @author Dat
  */
-public class ChoosePeopleXetNghiem extends javax.swing.JFrame {
+public class ChoosePeoplePhanAnh extends javax.swing.JFrame {
 
     private NhanKhauBean nhanKhauBean;
     private NhanKhauBean nhanKhauBeanTemp;
     private JFrame parentJFrame;
-    private final ChoosePeopleXetNghiemController controller;
+    private final ChoosePeoplePhanAnhController controller;
     
     /**
      * Creates new form ChoosePeople
      * @param nhanKhauBean nhan khau duoc truyen vao tu frame cha
      * @param parentJframe frame cha de disable
      */
-    public ChoosePeopleXetNghiem(NhanKhauBean nhanKhauBean, JFrame parentJframe) {
+    public ChoosePeoplePhanAnh(NhanKhauBean nhanKhauBean, JFrame parentJframe) {
         initComponents();
         this.nhanKhauBean = nhanKhauBean;
         this.parentJFrame = parentJframe;
         this.nhanKhauBeanTemp = new NhanKhauBean();
         parentJframe.setEnabled(false);
-        controller = new ChoosePeopleXetNghiemController(this.nhanKhauBeanTemp, searchJtf, selectedJtf, tableJpn, this);
+        controller = new ChoosePeoplePhanAnhController(this.nhanKhauBeanTemp, searchJtf, selectedJtf, tableJpn, this);
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -166,8 +166,8 @@ public class ChoosePeopleXetNghiem extends javax.swing.JFrame {
         this.nhanKhauBean.setListGiaDinhModels(this.nhanKhauBeanTemp.getListGiaDinhModels());
         this.nhanKhauBean.setListTieuSuModels(this.nhanKhauBeanTemp.getListTieuSuModels());
         this.parentJFrame.setEnabled(true);
-        ThemMoiXetNghiem themMoiXetNghiem = (ThemMoiXetNghiem) this.parentJFrame;
-        themMoiXetNghiem.setDataNhanKhau();
+        ThemMoiPhanAnh themMoiPhanAnh = (ThemMoiPhanAnh) this.parentJFrame;
+        themMoiPhanAnh.setDataNhanKhau();
         this.parentJFrame.setEnabled(true);
         dispose();
     }//GEN-LAST:event_confirmBtnActionPerformed

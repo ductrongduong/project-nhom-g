@@ -4,24 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 import models.NhanKhauModel;
-import models.XetNghiemModel;
+import models.PhanAnhModel;
 import models.ChungMinhThuModel;
 
-public class XetNghiemBean {
-    //private XetNghiemModel xetNghiemModel;
+public class PhanAnhBean {
+    //private PhanAnhModel phanAnhModel;
     private NhanKhauModel nhanKhauModel;
     private ChungMinhThuModel chungMinhThuModel;
-    private List<XetNghiemModel> listXetNghiemModels;
+    private List<PhanAnhModel> listPhanAnhModels;
 
-    public XetNghiemBean(NhanKhauModel nhanKhauModel,List<XetNghiemModel> listXetNghiemModels,ChungMinhThuModel chungMinhThuModel) {
+    public PhanAnhBean(NhanKhauModel nhanKhauModel,List<PhanAnhModel> listPhanAnhModels,ChungMinhThuModel chungMinhThuModel) {
         this.nhanKhauModel = nhanKhauModel;
-        this.listXetNghiemModels=listXetNghiemModels;
+        this.listPhanAnhModels=listPhanAnhModels;
         this.chungMinhThuModel=chungMinhThuModel;
     }
 
-    public XetNghiemBean() {
+    public PhanAnhBean() {
         this.nhanKhauModel = new NhanKhauModel();
-        this.listXetNghiemModels= new ArrayList<>();
+        this.listPhanAnhModels= new ArrayList<>();
         this.chungMinhThuModel= new ChungMinhThuModel();
     }
 
@@ -41,12 +41,12 @@ public class XetNghiemBean {
         this.chungMinhThuModel = chungMinhThuModel;
     }
 
-    public List<XetNghiemModel> getListXetNghiemModels() {
-        return listXetNghiemModels;
+    public List<PhanAnhModel> getListPhanAnhModels() {
+        return listPhanAnhModels;
     }
 
-    public void setListXetNghiemModels(List<XetNghiemModel> listXetNghiemModels) {
-        this.listXetNghiemModels = listXetNghiemModels;
+    public void setListPhanAnhModels(List<PhanAnhModel> listPhanAnhModels) {
+        this.listPhanAnhModels = listPhanAnhModels;
     }
     
     
@@ -62,23 +62,23 @@ public class XetNghiemBean {
                 + "<p>Ngày sinh: <b>" + nhanKhauModel.getNamSinh()+ "</p>"
                 + "<p>Số CCCD: <b>" + chungMinhThuModel.getSoCMT()+ "</p>"
                 + "<p>Nơi thường trú: <b>" + nhanKhauModel.getNoiThuongTru()+ "</p>"
-                + "<h4>Lịch sử xét nghiệm<table>"
+                + "<h4>Lịch sử phản ánh<table>"
                 + "<tr>"
-                + "<th>Ngày xét nghiệm:</th>"
-                + "<th>Nơi xét nghiệm:</th>"
-                + "<th>Hình thức xét nghiệm:</th>"
-                + "<th>Kết quả xét nghiệm:</th>";
+                + "<th>Ngày phản ánh:</th>"
+                + "<th>Nội dung:</th>"
+                + "<th>Phân loại:</th>"
+                + "<th>Trạng thái:</th>";
             
-        for(XetNghiemModel xetNghiemModel: listXetNghiemModels){
+        for(PhanAnhModel phanAnhModel: listPhanAnhModels){
             res += "<tr>"
                 +  "<td>"
-                + xetNghiemModel.getNgayXetNghiem()
+                + phanAnhModel.getNgayPhanAnh()
                 +  "<td>"
-                + xetNghiemModel.getNoiXetNghiem()
+                + phanAnhModel.getNoiDung()
                 +  "<td>"
-                + xetNghiemModel.getHinhThucXetNghiem()
+                + phanAnhModel.getPhanLoai()
                 +  "<td>"
-                + xetNghiemModel.getKetQuaXetNghiem()
+                + phanAnhModel.getTrangThai()
                 + "</tr>"   ;
         }
         res += "</table></div></html>";

@@ -1,17 +1,17 @@
 package utility;
 
-import Bean.XetNghiemBean;
+import Bean.PhanAnhBean;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Hai
  */
-public class TableModelXetNghiem {
+public class TableModelPhanAnh {
     
-    public DefaultTableModel setTableXetNghiem(List<XetNghiemBean> listItem){
-        String[] listColumn={"Nhân khẩu ID","Tên nhân khẩu","Ngày xét nghiệm","Nơi xét nghiệm",
-            "Hình thức","Kết quả"};
+    public DefaultTableModel setTablePhanAnh(List<PhanAnhBean> listItem){
+        String[] listColumn={"Nhân khẩu ID","Tên nhân khẩu","Ngày phản ánh","Nội dung",
+            "Phân loại","Trạng thái"};
         DateString dateString =new DateString();
         final int columns = listColumn.length;
         DefaultTableModel dtm = new DefaultTableModel()  {
@@ -27,13 +27,13 @@ public class TableModelXetNghiem {
         dtm.setColumnIdentifiers(listColumn);
         Object[] obj;
         obj = new Object[columns];
-        listItem.forEach((XetNghiemBean item) -> {  
+        listItem.forEach((PhanAnhBean item) -> {  
             obj[0]= item.getNhanKhauModel().getID();
             obj[1]= item.getNhanKhauModel().getHoTen();
-            obj[2]= dateString.dateToString(item.getListXetNghiemModels().get(0).getNgayXetNghiem());
-            obj[3]= item.getListXetNghiemModels().get(0).getNoiXetNghiem();
-            obj[4]= item.getListXetNghiemModels().get(0).getHinhThucXetNghiem();
-            obj[5]= item.getListXetNghiemModels().get(0).getKetQuaXetNghiem();
+            obj[2]= dateString.dateToString(item.getListPhanAnhModels().get(0).getNgayPhanAnh());
+            obj[3]= item.getListPhanAnhModels().get(0).getNoiDung();
+            obj[4]= item.getListPhanAnhModels().get(0).getPhanLoai();
+            obj[5]= item.getListPhanAnhModels().get(0).getTrangThai();
             
             dtm.addRow(obj);
         });

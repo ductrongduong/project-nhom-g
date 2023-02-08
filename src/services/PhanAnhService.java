@@ -1,6 +1,6 @@
 package services;
 
-import Bean.XetNghiemBean;
+import Bean.PhanAnhBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,15 +9,15 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
-import models.XetNghiemModel;
+import models.PhanAnhModel;
 import models.ChungMinhThuModel;
 import models.NhanKhauModel;
 import utility.DateString;
 
-public class XetNghiemService {
-    // them moi nguoi xet nghiem
-    public XetNghiemBean getXetNghiem(int nhanKhauID){
-        XetNghiemBean xetNghiemBean= new XetNghiemBean();
+public class PhanAnhService {
+    // them moi nguoi phan anh
+    public PhanAnhBean getPhanAnh(int nhanKhauID){
+        PhanAnhBean phanAnhBean= new PhanAnhBean();
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
             String query = "SELECT nk.hoTen,nk.namSinh,nk.noiThuongTru,nk.gioiTinh,\n" +
@@ -29,13 +29,13 @@ public class XetNghiemService {
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()){
-                NhanKhauModel nhanKhau = xetNghiemBean.getNhanKhauModel();
+                NhanKhauModel nhanKhau = phanAnhBean.getNhanKhauModel();
                 nhanKhau.setID(nhanKhauID);
                 nhanKhau.setHoTen(rs.getString("hoTen"));
                 nhanKhau.setGioiTinh(rs.getString("gioiTinh"));
                 nhanKhau.setNamSinh(rs.getDate("namSinh"));
                 nhanKhau.setNoiThuongTru(rs.getString("noiThuongTru"));
-                ChungMinhThuModel chungMinhThuModel = xetNghiemBean.getChungMinhThuModel();
+                ChungMinhThuModel chungMinhThuModel = phanAnhBean.getChungMinhThuModel();
                 chungMinhThuModel.setID(rs.getInt("cmtID"));
                 chungMinhThuModel.setIdNhanKhau(nhanKhauID);
                 chungMinhThuModel.setSoCMT(rs.getString("soCMT"));
@@ -44,154 +44,154 @@ public class XetNghiemService {
 
             }
             preparedStatement.close();
-            query = "SELECT xetNghiemID,nhanKhauID,ngayXetNghiem,noiXetNghiem,"
-                + "hinhThucXetNghiem, ketQuaXetNghiem \n" +
-                "FROM xet_nghiem\n" +
+            query = "SELECT phanAnhID,nhanKhauID,ngayPhanAnh,noiDung,"
+                + "phanLoai,trangThai \n" +
+                "FROM phan_anh\n" +
                 "WHERE nhanKhauID= " +String.valueOf(nhanKhauID)+
                 ";";
             preparedStatement = (PreparedStatement)connection.prepareStatement(query);
             rs = preparedStatement.executeQuery();
             while (rs.next()){
-                XetNghiemModel xetNghiemModel= new XetNghiemModel();
-                xetNghiemModel.setXetNghiemID(rs.getInt("xetNghiemID"));
-                xetNghiemModel.setNhanKhauID(rs.getInt("nhanKhauID"));
-                xetNghiemModel.setNgayXetNghiem(rs.getDate("ngayXetNghiem"));
-                xetNghiemModel.setNoiXetNghiem(rs.getString("noiXetNghiem"));
-                xetNghiemModel.setHinhThucXetNghiem(rs.getString("hinhThucXetNghiem"));
-                xetNghiemModel.setKetQuaXetNghiem(rs.getString("ketQuaXetNghiem"));
+                PhanAnhModel phanAnhModel= new PhanAnhModel();
+                phanAnhModel.setPhanAnhID(rs.getInt("phanAnhID"));
+                phanAnhModel.setNhanKhauID(rs.getInt("nhanKhauID"));
+                phanAnhModel.setNgayPhanAnh(rs.getDate("ngayPhanAnh"));
+                phanAnhModel.setNoiDung(rs.getString("noiDung"));
+                phanAnhModel.setPhanLoai(rs.getString("phanLoai"));
+                phanAnhModel.setTrangThai(rs.getString("trangThai"));
                 
-                xetNghiemBean.getListXetNghiemModels().add(xetNghiemModel);
+                phanAnhBean.getListPhanAnhModels().add(phanAnhModel);
             }
             connection.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return xetNghiemBean;
+        return phanAnhBean;
     }
     
-    public List<XetNghiemBean> getListXetNghiem(){
-        List<XetNghiemBean> list = new ArrayList<>();
+    public List<PhanAnhBean> getListPhanAnh(){
+        List<PhanAnhBean> list = new ArrayList<>();
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
-            String query = "SELECT xn.xetNghiemID,xn.nhanKhauID,xn.ngayXetNghiem, xn.noiXetNghiem,  "
-                    + "xn.hinhThucXetNghiem, xn.ketQuaXetNghiem,nk.hoTen,nk.namSinh,"
+            String query = "SELECT xn.phanAnhID,xn.nhanKhauID,xn.ngayPhanAnh, xn.noiDung,  "
+                    + "xn.phanLoai, xn.trangThai,nk.hoTen,nk.namSinh,"
                     + "nk.noiThuongTru,nk.gioiTinh, cmt.ID cmtID, "
                     + "cmt.soCMT,cmt.ngayCap,cmt.noiCap \n" 
-                    + "FROM xet_nghiem xn JOIN nhan_khau nk ON xn.nhanKhauID=nk.ID \n" 
+                    + "FROM phan_anh xn JOIN nhan_khau nk ON xn.nhanKhauID=nk.ID \n" 
                     + "JOIN chung_minh_thu cmt ON nk.ID= cmt.idNhanKhau \n" 
-                    + "JOIN (SELECT xetNghiemID, ngayXetNghiem FROM xet_nghiem GROUP BY nhanKhauID) maxxn ON xn.xetNghiemID=maxxn.xetNghiemID\n" 
+                    + "JOIN (SELECT phanAnhID, ngayPhanAnh FROM phan_anh GROUP BY nhanKhauID) maxxn ON xn.phanAnhID=maxxn.phanAnhID\n" 
                     +";";
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()){
-                XetNghiemBean xetNghiemBean =new XetNghiemBean();
-                XetNghiemModel xetNghiemModel= new XetNghiemModel();
-                xetNghiemModel.setXetNghiemID(rs.getInt("xetNghiemID"));
-                xetNghiemModel.setNhanKhauID(rs.getInt("nhanKhauID"));
-                xetNghiemModel.setNgayXetNghiem(rs.getDate("ngayXetNghiem"));
-                xetNghiemModel.setNoiXetNghiem(rs.getString("noiXetNghiem"));
-                xetNghiemModel.setHinhThucXetNghiem(rs.getString("hinhThucXetNghiem"));
-                xetNghiemModel.setKetQuaXetNghiem(rs.getString("ketQuaXetNghiem"));
+                PhanAnhBean phanAnhBean =new PhanAnhBean();
+                PhanAnhModel phanAnhModel= new PhanAnhModel();
+                phanAnhModel.setPhanAnhID(rs.getInt("phanAnhID"));
+                phanAnhModel.setNhanKhauID(rs.getInt("nhanKhauID"));
+                phanAnhModel.setNgayPhanAnh(rs.getDate("ngayPhanAnh"));
+                phanAnhModel.setNoiDung(rs.getString("noiDung"));
+                phanAnhModel.setPhanLoai(rs.getString("phanLoai"));
+                phanAnhModel.setTrangThai(rs.getString("trangThai"));
                 
-                xetNghiemBean.getListXetNghiemModels().add(xetNghiemModel);
+                phanAnhBean.getListPhanAnhModels().add(phanAnhModel);
                 
-                NhanKhauModel nhanKhau = xetNghiemBean.getNhanKhauModel();
+                NhanKhauModel nhanKhau = phanAnhBean.getNhanKhauModel();
                 nhanKhau.setID(rs.getInt("nhanKhauID"));
                 nhanKhau.setHoTen(rs.getString("hoTen"));
                 nhanKhau.setGioiTinh(rs.getString("gioiTinh"));
                 nhanKhau.setNamSinh(rs.getDate("namSinh"));
                 nhanKhau.setNoiThuongTru(rs.getString("noiThuongTru"));
-                ChungMinhThuModel chungMinhThuModel = xetNghiemBean.getChungMinhThuModel();
+                ChungMinhThuModel chungMinhThuModel = phanAnhBean.getChungMinhThuModel();
                 chungMinhThuModel.setID(rs.getInt("cmtID"));
                 chungMinhThuModel.setIdNhanKhau(rs.getInt("nhanKhauID"));
                 chungMinhThuModel.setSoCMT(rs.getString("soCMT"));
                 chungMinhThuModel.setNgayCap(rs.getDate("ngayCap"));
                 chungMinhThuModel.setNoiCap(rs.getString("noiCap"));
-                list.add(xetNghiemBean);
+                list.add(phanAnhBean);
             }
             preparedStatement.close();
             connection.close();
         } catch (Exception e) {
-            System.out.println("Loi tai dong 135 XetNghiem Service");
+            System.out.println("Loi tai dong 135 PhanAnh Service");
         }
         return list;
     }
     
-    public List<XetNghiemBean> findListXetNghiem(String field,String value){
-        List<XetNghiemBean> list = new ArrayList<>();
+    public List<PhanAnhBean> findListPhanAnh(String field,String value){
+        List<PhanAnhBean> list = new ArrayList<>();
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
-            String query = "SELECT xn.xetNghiemID,xn.nhanKhauID,xn.ngayXetNghiem, xn.noiXetNghiem, "
-                    + "xn.hinhThucXetNghiem, xn.ketQuaXetNghiem,nk.hoTen,nk.namSinh,"
+            String query = "SELECT xn.phanAnhID,xn.nhanKhauID,xn.ngayPhanAnh, xn.noiDung, "
+                    + "xn.phanLoai, xn.trangThai,nk.hoTen,nk.namSinh,"
                     + "nk.noiThuongTru,nk.gioiTinh, cmt.ID cmtID, "
                     + "cmt.soCMT,cmt.ngayCap,cmt.noiCap \n" 
-                    + "FROM xet_nghiem xn JOIN nhan_khau nk ON xn.nhanKhauID=nk.ID \n" 
+                    + "FROM phan_anh xn JOIN nhan_khau nk ON xn.nhanKhauID=nk.ID \n" 
                     + "JOIN chung_minh_thu cmt ON nk.ID= cmt.idNhanKhau \n" 
-                    + "JOIN (SELECT xetNghiemID, max(ngayXetNghiem) FROM xet_nghiem GROUP BY nhanKhauID) maxxn ON xn.xetNghiemID=maxxn.xetNghiemID\n" 
+                    + "JOIN (SELECT phanAnhID, max(ngayPhanAnh) FROM phan_anh GROUP BY nhanKhauID) maxxn ON xn.phanAnhID=maxxn.phanAnhID\n" 
                     + "WHERE "+field +" LIKE '%"+value+"%' "
                     +"\n;";
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()){
-                XetNghiemBean xetNghiemBean =new XetNghiemBean();
-                XetNghiemModel xetNghiemModel= new XetNghiemModel();
-                xetNghiemModel.setXetNghiemID(rs.getInt("xetNghiemID"));
-                xetNghiemModel.setNhanKhauID(rs.getInt("nhanKhauID"));
-                xetNghiemModel.setNgayXetNghiem(rs.getDate("ngayXetNghiem"));
-                xetNghiemModel.setNoiXetNghiem(rs.getString("noiXetNghiem"));
-                xetNghiemModel.setHinhThucXetNghiem(rs.getString("hinhThucXetNghiem"));
-                xetNghiemModel.setKetQuaXetNghiem(rs.getString("ketQuaXetNghiem"));
-                xetNghiemBean.getListXetNghiemModels().add(xetNghiemModel);
+                PhanAnhBean phanAnhBean =new PhanAnhBean();
+                PhanAnhModel phanAnhModel= new PhanAnhModel();
+                phanAnhModel.setPhanAnhID(rs.getInt("phanAnhID"));
+                phanAnhModel.setNhanKhauID(rs.getInt("nhanKhauID"));
+                phanAnhModel.setNgayPhanAnh(rs.getDate("ngayPhanAnh"));
+                phanAnhModel.setNoiDung(rs.getString("noiDung"));
+                phanAnhModel.setPhanLoai(rs.getString("phanLoai"));
+                phanAnhModel.setTrangThai(rs.getString("trangThai"));
+                phanAnhBean.getListPhanAnhModels().add(phanAnhModel);
                 
-                NhanKhauModel nhanKhau = xetNghiemBean.getNhanKhauModel();
+                NhanKhauModel nhanKhau = phanAnhBean.getNhanKhauModel();
                 nhanKhau.setID(rs.getInt("nhanKhauID"));
                 nhanKhau.setHoTen(rs.getString("hoTen"));
                 nhanKhau.setGioiTinh(rs.getString("gioiTinh"));
                 nhanKhau.setNamSinh(rs.getDate("namSinh"));
                 nhanKhau.setNoiThuongTru(rs.getString("noiThuongTru"));
-                ChungMinhThuModel chungMinhThuModel = xetNghiemBean.getChungMinhThuModel();
+                ChungMinhThuModel chungMinhThuModel = phanAnhBean.getChungMinhThuModel();
                 chungMinhThuModel.setID(rs.getInt("cmtID"));
                 chungMinhThuModel.setIdNhanKhau(rs.getInt("nhanKhauID"));
                 chungMinhThuModel.setSoCMT(rs.getString("soCMT"));
                 chungMinhThuModel.setNgayCap(rs.getDate("ngayCap"));
                 chungMinhThuModel.setNoiCap(rs.getString("noiCap"));
                 
-                list.add(xetNghiemBean);
+                list.add(phanAnhBean);
             }
             preparedStatement.close();
             connection.close();
         } catch (Exception e) {
-            System.out.println("Loi tai dong 187 Xet Nghiem Service");
+            System.out.println("Loi tai dong 187 PhanAnh Service");
         }
         return list;
         
     }
     
     
-    public List<XetNghiemBean> thongKeListXetNghiem(List<Boolean> boolCheckbox, List<Date> date,List<String> hinhthuc,List<String> ketqua){
-        List<XetNghiemBean> list = new ArrayList<>();
+    public List<PhanAnhBean> thongKeListPhanAnh(List<Boolean> boolCheckbox, List<Date> date,List<String> phanloai,List<String> trangthai){
+        List<PhanAnhBean> list = new ArrayList<>();
         
         Calendar calendar = Calendar.getInstance();
         
         DateString dateString =new DateString();
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
-            String query = "SELECT xn.xetNghiemID,xn.nhanKhauID,xn.ngayXetNghiem, xn.noiXetnghiem, "
-                    + "xn.hinhThucXetNghiem, xn.ketQuaXetNghiem,nk.hoTen,nk.namSinh,"
+            String query = "SELECT xn.phanAnhID,xn.nhanKhauID,xn.ngayPhanAnh, xn.noiDung, "
+                    + "xn.phanLoai, xn.trangThai,nk.hoTen,nk.namSinh,"
                     + "nk.noiThuongTru,nk.gioiTinh, cmt.ID cmtID, "
                     + "cmt.soCMT,cmt.ngayCap,cmt.noiCap \n" 
-                    + "FROM xet_nghiem xn JOIN nhan_khau nk ON xn.nhanKhauID=nk.ID \n" 
+                    + "FROM phan_anh xn JOIN nhan_khau nk ON xn.nhanKhauID=nk.ID \n" 
                     + "JOIN chung_minh_thu cmt ON nk.ID= cmt.idNhanKhau \n" 
-                    + "JOIN (SELECT xetNghiemID, max(ngayXetNghiem) FROM xet_nghiem GROUP BY nhanKhauID) maxxn ON xn.xetNghiemID=maxxn.xetNghiemID\n"
+                    + "JOIN (SELECT phanAnhID, max(ngayPhanAnh) FROM phan_anh GROUP BY nhanKhauID) maxxn ON xn.phanAnhID=maxxn.phanAnhID\n"
                     ;
             List<String> liststr=new ArrayList<String>();
             if(boolCheckbox.get(0)){
-                String str="( ngayXetNghiem >= '";
+                String str="( ngayPhanAnh >= '";
                 calendar.setTime(date.get(0));
                 str+= String.valueOf(calendar.get(Calendar.YEAR))+"-"+
                       String.valueOf(calendar.get(Calendar.MONTH)+1)+"-"+
                       String.valueOf(calendar.get(Calendar.DATE));
-                str+="' AND ngayXetNghiem <= '";
+                str+="' AND ngayPhanAnh <= '";
                 calendar.setTime(date.get(1));
                 str+= String.valueOf(calendar.get(Calendar.YEAR))+"-"+
                       String.valueOf(calendar.get(Calendar.MONTH)+1)+"-"+
@@ -199,37 +199,22 @@ public class XetNghiemService {
                 str+="' )";
                 liststr.add(str);
             }
-//            if(boolCheckbox.get(1)){
-//                String str ="( ngayXetNghiem >= '"
-//                        +dateString.dateToString(date.get(0))
-//                        +"' AND ngayXetNghiem <= '"
-//                        +dateString.dateToString(date.get(1))
-//                        +"' )";
-//                liststr.add(str);
-//            }
-//            if(boolCheckbox.get(1)){
-//                String str="( ngayXetNghiem >= '"
-//                        +dateString.dateToString(date.get(2))
-//                        +"' AND ngayXetNghiem <= '"
-//                        +dateString.dateToString(date.get(3))
-//                        +"' )";
-//                liststr.add(str);
-//            }
-            if(boolCheckbox.get(1)&& !hinhthuc.isEmpty()){
-                String str="( hinhThucXetNghiem IN (";
-                str+=" '"+hinhthuc.get(0) +"' ";
-                for(int i=1;i<hinhthuc.size();i++)str+=", '"+hinhthuc.get(i)+"' ";
+
+            if(boolCheckbox.get(1)&& !phanloai.isEmpty()){
+                String str="( phanLoai IN (";
+                str+=" '"+phanloai.get(0) +"' ";
+                for(int i=1;i<phanloai.size();i++)str+=", '"+phanloai.get(i)+"' ";
                 str+=") )";
                 liststr.add(str);
             }
-            if(boolCheckbox.get(2)&& !ketqua.isEmpty()){
-                for(int i=0;i<ketqua.size();i++){
-                    if(ketqua.get(i).equalsIgnoreCase("khác"))
-                        ketqua.set(i, "( ketQuaXetNghiem NOT LIKE '%dương tính%' AND  ketQuaXetNghiem NOT LIKE '%âm tính%' )");
+            if(boolCheckbox.get(2)&& !trangthai.isEmpty()){
+                for(int i=0;i<trangthai.size();i++){
+                    if(trangthai.get(i).equalsIgnoreCase("khác"))
+                        trangthai.set(i, "( trangThai NOT LIKE '%Mới ghi nhận%' AND  trangThai NOT LIKE '%Chưa giải quyết%'  AND  trangThai NOT LIKE '%Đã giải quyết%')");
                     else 
-                        ketqua.set(i,"( ketQuaXetNghiem LiKE '%"+ketqua.get(i)+ "%' )");
+                        trangthai.set(i,"( trangThai LIKE '%"+trangthai.get(i)+ "%' )");
                 }
-                liststr.add("( "+String.join(" OR ", ketqua)+" )" );
+                liststr.add("( "+String.join(" OR ", trangthai)+" )" );
                 
             }
             if(!liststr.isEmpty())query=query+"WHERE "+ String.join(" AND ",liststr );
@@ -237,30 +222,30 @@ public class XetNghiemService {
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()){
-                XetNghiemBean xetNghiemBean =new XetNghiemBean();
-                XetNghiemModel xetNghiemModel= new XetNghiemModel();
-                xetNghiemModel.setXetNghiemID(rs.getInt("xetNghiemID"));
-                xetNghiemModel.setNhanKhauID(rs.getInt("nhanKhauID"));
-                xetNghiemModel.setNgayXetNghiem(rs.getDate("ngayXetNghiem"));
-                xetNghiemModel.setNoiXetNghiem(rs.getString("noiXetNghiem"));;
-                xetNghiemModel.setHinhThucXetNghiem(rs.getString("hinhThucXetNghiem"));
-                xetNghiemModel.setKetQuaXetNghiem(rs.getString("ketQuaXetNghiem"));
-                xetNghiemBean.getListXetNghiemModels().add(xetNghiemModel);
+                PhanAnhBean phanAnhBean =new PhanAnhBean();
+                PhanAnhModel phanAnhModel= new PhanAnhModel();
+                phanAnhModel.setPhanAnhID(rs.getInt("phanAnhID"));
+                phanAnhModel.setNhanKhauID(rs.getInt("nhanKhauID"));
+                phanAnhModel.setNgayPhanAnh(rs.getDate("ngayPhanAnh"));
+                phanAnhModel.setNoiDung(rs.getString("noiDung"));;
+                phanAnhModel.setPhanLoai(rs.getString("phanLoai"));
+                phanAnhModel.setTrangThai(rs.getString("trangThai"));
+                phanAnhBean.getListPhanAnhModels().add(phanAnhModel);
                 
-                NhanKhauModel nhanKhau = xetNghiemBean.getNhanKhauModel();
+                NhanKhauModel nhanKhau = phanAnhBean.getNhanKhauModel();
                 nhanKhau.setID(rs.getInt("nhanKhauID"));
                 nhanKhau.setHoTen(rs.getString("hoTen"));
                 nhanKhau.setGioiTinh(rs.getString("gioiTinh"));
                 nhanKhau.setNamSinh(rs.getDate("namSinh"));
                 nhanKhau.setNoiThuongTru(rs.getString("noiThuongTru"));
-                ChungMinhThuModel chungMinhThuModel = xetNghiemBean.getChungMinhThuModel();
+                ChungMinhThuModel chungMinhThuModel = phanAnhBean.getChungMinhThuModel();
                 chungMinhThuModel.setID(rs.getInt("cmtID"));
                 chungMinhThuModel.setIdNhanKhau(rs.getInt("nhanKhauID"));
                 chungMinhThuModel.setSoCMT(rs.getString("soCMT"));
                 chungMinhThuModel.setNgayCap(rs.getDate("ngayCap"));
                 chungMinhThuModel.setNoiCap(rs.getString("noiCap"));
                 
-                list.add(xetNghiemBean);
+                list.add(phanAnhBean);
             }
             preparedStatement.close();
             connection.close();

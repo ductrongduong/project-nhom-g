@@ -13,13 +13,11 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import views.CachLyManagePanel;
 import views.HoKhauManagePanel;
 import views.HomePagePanel;
 import views.NhanKhauManagePanel;
-import views.SucKhoeManagePanel;
 import views.ThongKePanel;
-import views.XetNghiemManagePanel;
+import views.PhanAnhManagePanel;
 
 /**
  *
@@ -56,15 +54,9 @@ public class MainController {
                 case "ThongKe":
                     view = new ThongKePanel(this.jfrMain);
                     break;
-                case "SucKhoe":
-                    view = new SucKhoeManagePanel(this.jfrMain);
-                    break;
                 //any more
-                case "CachLy":
-                    view = new CachLyManagePanel(this.jfrMain);
-                    break;
-                case "XetNghiem":
-                    view = new XetNghiemManagePanel(this.jfrMain);
+                case "PhanAnh":
+                    view = new PhanAnhManagePanel(this.jfrMain);
                     break;
                 default:
                     break;
@@ -132,14 +124,8 @@ public class MainController {
                 case "ThongKe":
                     view = new ThongKePanel(this.jfrMain);
                     break;
-                case "CachLy":
-                    view = new CachLyManagePanel(this.jfrMain);
-                    break;
-                case "XetNghiem":
-                    view = new XetNghiemManagePanel(this.jfrMain);
-                    break;
-                case "SucKhoe":
-                    view = new SucKhoeManagePanel(this.jfrMain);
+                case "PhanAnh":
+                    view = new PhanAnhManagePanel(this.jfrMain);
                     break;
                 default:
                     break;

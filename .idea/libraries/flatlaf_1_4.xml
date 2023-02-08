@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="flatlaf-1.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../lib/flatlaf-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../lib/jcalendar-1.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../lib/mysql-connector-java-5.1.40.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,6 +1,6 @@
 package controllers;
 
-import Bean.XetNghiemBean;
+import Bean.PhanAnhBean;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -15,41 +15,41 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import services.XetNghiemService;
-import utility.TableModelXetNghiem;
+import services.PhanAnhService;
+import utility.TableModelPhanAnh;
 import views.infoViews.InfoJframe;
 
 /**
  *
  * @author Hoang
  */
-public class XetNghiemPanelController {
+public class PhanAnhPanelController {
     private JPanel jpnView;
     private JTextField jtfsoLuong;
-    private XetNghiemService xetNghiemService;
-    private List<XetNghiemBean> listXetNghiemBeans;
-    private TableModelXetNghiem tableModelXetNghiem;
+    private PhanAnhService phanAnhService;
+    private List<PhanAnhBean> listPhanAnhBeans;
+    private TableModelPhanAnh tableModelPhanAnh;
     private JFrame parentJFrame;
     
-    public XetNghiemPanelController(JPanel jpnView, JTextField jtfSoLuong){
+    public PhanAnhPanelController(JPanel jpnView, JTextField jtfSoLuong){
         this.jpnView = jpnView;
         this.jtfsoLuong = jtfSoLuong;
-        tableModelXetNghiem = new TableModelXetNghiem();
-        this.xetNghiemService = new XetNghiemService();
-        this.listXetNghiemBeans = this.xetNghiemService.getListXetNghiem();
+        tableModelPhanAnh = new TableModelPhanAnh();
+        this.phanAnhService = new PhanAnhService();
+        this.listPhanAnhBeans = this.phanAnhService.getListPhanAnh();
         setSoLuong();
         setDataTable();
 
     }
 
-    public XetNghiemPanelController() {
+    public PhanAnhPanelController() {
     }
     public void setSoLuong(){
-        this.jtfsoLuong.setText("" + listXetNghiemBeans.size());
+        this.jtfsoLuong.setText("" + listPhanAnhBeans.size());
     }
     
     public void setDataTable(){
-        DefaultTableModel model = tableModelXetNghiem.setTableXetNghiem(listXetNghiemBeans);
+        DefaultTableModel model = tableModelPhanAnh.setTablePhanAnh(listPhanAnhBeans);
         JTable table = new JTable(model){
             @Override
             public boolean editCellAt(int row, int column, EventObject e) {
@@ -94,26 +94,26 @@ public class XetNghiemPanelController {
     }
     
     public void thongke(List<Boolean> boolCheckbox, List<Date> date,List<String> hinhthuc,List<String> ketqua){
-        this.listXetNghiemBeans = this.xetNghiemService.thongKeListXetNghiem(boolCheckbox, date, hinhthuc, ketqua);
+        this.listPhanAnhBeans = this.phanAnhService.thongKeListPhanAnh(boolCheckbox, date, hinhthuc, ketqua);
         setSoLuong();
         setDataTable();        
     }
     
     public void chiTiet(int i){
-        XetNghiemBean temp = listXetNghiemBeans.get(i);
-        XetNghiemBean info = xetNghiemService.getXetNghiem(temp.getNhanKhauModel().getID());
+        PhanAnhBean temp = listPhanAnhBeans.get(i);
+        PhanAnhBean info = phanAnhService.getPhanAnh(temp.getNhanKhauModel().getID());
         InfoJframe infoJframe = new InfoJframe(info.toString(), parentJFrame);
         infoJframe.setLocationRelativeTo(null);
         infoJframe.setVisible(true);
     }
     public void timkiem(String field,String value){
-        this.listXetNghiemBeans = this.xetNghiemService.findListXetNghiem(field, value);
+        this.listPhanAnhBeans = this.phanAnhService.findListPhanAnh(field, value);
         setSoLuong();
         setDataTable();
     }
     
     public void reset(){
-        this.listXetNghiemBeans = this.xetNghiemService.getListXetNghiem();
+        this.listPhanAnhBeans = this.phanAnhService.getListPhanAnh();
         setSoLuong();
         setDataTable();
     }
@@ -134,28 +134,28 @@ public class XetNghiemPanelController {
         this.jtfsoLuong = jtfsoLuong;
     }
 
-    public XetNghiemService getXetNghiemService() {
-        return xetNghiemService;
+    public PhanAnhService getPhanAnhService() {
+        return phanAnhService;
     }
 
-    public void setCachLyService(XetNghiemService xetNghiemService) {
-        this.xetNghiemService = xetNghiemService;
+    public void setCachLyService(PhanAnhService phanAnhService) {
+        this.phanAnhService = phanAnhService;
     }
 
-    public List<XetNghiemBean> getListXetNghiemBeans() {
-        return listXetNghiemBeans;
+    public List<PhanAnhBean> getListPhanAnhBeans() {
+        return listPhanAnhBeans;
     }
 
-    public void setListXetNghiemBeans(List<XetNghiemBean> listXetNghiemBeans) {
-        this.listXetNghiemBeans = listXetNghiemBeans;
+    public void setListPhanAnhBeans(List<PhanAnhBean> listPhanAnhBeans) {
+        this.listPhanAnhBeans = listPhanAnhBeans;
     }
 
-    public TableModelXetNghiem getTableModelXetNghiem() {
-        return tableModelXetNghiem;
+    public TableModelPhanAnh getTableModelPhanAnh() {
+        return tableModelPhanAnh;
     }
 
-    public void setTableModelXetNghiem(TableModelXetNghiem tableModelXetNghiem) {
-        this.tableModelXetNghiem = tableModelXetNghiem;
+    public void setTableModelPhanAnh(TableModelPhanAnh tableModelPhanAnh) {
+        this.tableModelPhanAnh = tableModelPhanAnh;
     }
 
     public JFrame getParentJFrame() {
