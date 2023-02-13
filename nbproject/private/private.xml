@@ -3,45 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/controllers/HoKhauManagerController/ThemMoiController.java</file>
             <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/PhanAnhManagePanel.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/NhanKhauManagerFrame/DangKyTamVangJFrame.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/models/KhaiTuModel.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/HoKhauManagerFrame/TachHoKhau.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/controllers/MainController.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/HoKhauManagerFrame/ChoosePeople.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/controllers/NhanKhauManagerController/DangKyTamTruController.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/HoKhauManagerFrame/ChangeListPeopleJframe.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/infoViews/InfoJframe.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/HoKhauManagerFrame/ChoosePeopleThemMoi.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/models/ChungMinhThuModel.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/LoginUI.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/PhanAnhManagerFrame/ChoosePeoplePhanAnh.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/models/DinhChinhModel.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/MainFrame.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/NhanKhauManagerFrame/DangKyTamTruJFrame.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/models/TamVangModel.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/NhanKhauManagerFrame/AddNewPeopleJFrame.java</file>
             <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/themes/MyTheme.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/quanlynhankhau/QuanLyNhanKhau.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/controllers/HoKhauManagerController/ChangeListPeopleController.java</file>
             <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/controllers/HoKhauManagerController/ChoosePeopleController.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/HoKhauManagerFrame/ThemMoiHoKhau.java</file>
+            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/controllers/HoKhauManagerController/ChuyenDiNoiKhacController.java</file>
             <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/HomePagePanel.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/models/GiaDinhModel.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/controllers/ThongKePanelController.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/controllers/HomeCotroller.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/PhanAnhManagerFrame/ThemMoiPhanAnh.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/models/HoKhauModel.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/utility/ClassTableModel.java</file>
+            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/controllers/HoKhauManagerController/TachHoKhauController.java</file>
+            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/infoViews/InfoJframe.java</file>
             <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/themes/MyTheme.properties</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/controllers/NhanKhauManagerController/DangKyTamVangController.java</file>
+            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/controllers/HoKhauManagerController/ThemThanhVienController.java</file>
             <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/NhanKhauManagerFrame/TieuSuJFrame.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/controllers/NhanKhauManagerController/AddNewController.java</file>
             <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/ThongKePanel.java</file>
+            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/MainFrame.java</file>
             <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/NhanKhauManagePanel.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/HoKhauManagerFrame/ChuyenDiNoiKhac.java</file>
-            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/HoKhauManagerFrame/ThemThanhVien.java</file>
             <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/HoKhauManagePanel.java</file>
+            <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/NhanKhauManagerFrame/DangKyTamTruJFrame.java</file>
             <file>file:/C:/Users/Dell/Desktop/project_nhom_g/src/views/NhanKhauManagerFrame/KhaiTuJFrame.java</file>
         </group>
     </open-files>
