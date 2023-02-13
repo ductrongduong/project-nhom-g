@@ -65,10 +65,10 @@ public class InfoJframe extends javax.swing.JFrame {
         contentJlb.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         contentJlb.setText("jLabel1");
         contentJlb.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel1.add(contentJlb, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 830, 500));
+        jPanel1.add(contentJlb, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 830, 500));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/0f6ed50ed0b14e9194ff5b5f07d6fcd5.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 650));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 920, 650));
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 590));

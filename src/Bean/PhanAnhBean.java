@@ -64,6 +64,7 @@ public class PhanAnhBean {
                 + "<p>Nơi thường trú: <b>" + nhanKhauModel.getNoiThuongTru()+ "</p>"
                 + "<h4>Lịch sử phản ánh<table>"
                 + "<tr>"
+                + "<th>Id:</th>"                
                 + "<th>Ngày phản ánh:</th>"
                 + "<th>Nội dung:</th>"
                 + "<th>Phân loại:</th>"
@@ -72,6 +73,8 @@ public class PhanAnhBean {
         for(PhanAnhModel phanAnhModel: listPhanAnhModels){
             res += "<tr>"
                 +  "<td>"
+                + phanAnhModel.getPhanAnhID()
+                +  "<td>"                    
                 + phanAnhModel.getNgayPhanAnh()
                 +  "<td>"
                 + phanAnhModel.getNoiDung()

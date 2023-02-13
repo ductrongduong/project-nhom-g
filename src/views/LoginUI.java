@@ -83,7 +83,7 @@ public class LoginUI extends javax.swing.JFrame {
                 txbUserNameActionPerformed(evt);
             }
         });
-        jpnLogin.add(txbUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 257, 30));
+        jpnLogin.add(txbUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 257, 30));
         txbUserName.getAccessibleContext().setAccessibleName("txtPasswod");
 
         txbPasswd.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -93,7 +93,7 @@ public class LoginUI extends javax.swing.JFrame {
                 txbPasswdActionPerformed(evt);
             }
         });
-        jpnLogin.add(txbPasswd, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 257, 30));
+        jpnLogin.add(txbPasswd, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 257, 30));
 
         btnLogin.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnLogin.setText("Đăng nhập");
@@ -108,22 +108,22 @@ public class LoginUI extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        jpnLogin.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, 81, 30));
+        jpnLogin.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, 81, 30));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Tài khoản:");
-        jpnLogin.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 73, -1));
+        jpnLogin.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 73, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Mật khẩu:");
-        jpnLogin.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 80, -1));
+        jpnLogin.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 80, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("ĐĂNG NHẬP");
-        jpnLogin.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 20, 158, 42));
+        jpnLogin.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 158, 42));
         jpnLogin.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 64, 37, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/istockphoto-1147040712-612x612.jpg"))); // NOI18N
