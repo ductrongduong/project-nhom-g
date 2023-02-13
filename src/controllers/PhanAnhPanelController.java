@@ -75,12 +75,14 @@ public class PhanAnhPanelController {
 //                System.out.println(table.getSelectedRow());
                 if (e.getClickCount() > 1) {
 //                    System.out.println(table.getSelectedRow());
+                    System.out.println("11111111111111111");
                     chiTiet(table.getSelectedRow());
                 }
-
+                
             }
             
         });
+        
         
         JScrollPane scroll = new JScrollPane();
         scroll.getViewport().add(table);

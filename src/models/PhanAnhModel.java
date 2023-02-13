@@ -14,6 +14,24 @@ public class PhanAnhModel {
     private String phanLoai;
     private String trangThai;
    
+    public PhanAnhModel() {
+        phanAnhID = 0;
+        nhanKhauID = 0;
+        ngayPhanAnh = new Date();
+        noiDung = "";
+        phanLoai = "";
+        trangThai = "";
+    }
+    
+    public PhanAnhModel(int phanAnhId, int nhanKhauID, Date ngayPhanAnh, 
+        String noiDung, String phanLoai, String trangThai) {
+        this.phanAnhID = phanAnhId;
+        this.nhanKhauID = nhanKhauID;
+        this.ngayPhanAnh = ngayPhanAnh;
+        this.noiDung = noiDung;
+        this.phanLoai = phanLoai;
+        this.trangThai = trangThai;
+    }
 
     public int getPhanAnhID() {
         return phanAnhID;

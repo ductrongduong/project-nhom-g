@@ -136,20 +136,18 @@ public class MainController {
             root.add(view);
             root.validate();
             root.repaint();
-            setDefaultColor();
-            jlbItem.setBackground(new Color(0));
-            jpnItem.setBackground(new Color(0));
+            //setDefaultColor();
+ 
         }        
 
         @Override
         public void mousePressed(MouseEvent e) {
-            kindSelected = kind;
-            jlbItem.setBackground(Color.BLACK);
-            jpnItem.setBackground(Color.BLACK);
+
         }
 
         @Override
         public void mouseReleased(MouseEvent e) {
+            
         }
 
         @Override
@@ -162,12 +160,12 @@ public class MainController {
         public void mouseExited(MouseEvent e) {
             if (!kind.equalsIgnoreCase(kindSelected)) {
                 if (kind.equals("TrangChu")) {
-                    jlbItem.setBackground(new Color(0, 160, 50));
-                    jpnItem.setBackground(new Color(0, 160, 50));
+                    jlbItem.setBackground(new Color(51, 102, 225));
+                    jpnItem.setBackground(new Color(51, 102, 225));
                 } else 
                 {
-                    jlbItem.setBackground(new Color(102,102,102));
-                    jpnItem.setBackground(new Color(102,102,102));
+                    jlbItem.setBackground(new Color(51, 102, 225));
+                    jpnItem.setBackground(new Color(51, 102, 225));
                 }
             }
         }

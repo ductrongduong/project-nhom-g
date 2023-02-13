@@ -3,26 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/views/LoginUI.java</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/Icons/hotel.png</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/Icons/home.png</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/models/CachLyModel.java</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/controllers/LoginController.java</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/controllers/ThongKePanelController.java</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/controllers/HoKhauManagerPanelController.java</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/views/HoKhauManagePanel.java</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/Icons/increasing-stocks-graphic.png</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/Icons/house.png</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/views/CachLyManagePanel.java</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/controllers/CachLyManagerPanelController.java</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/utility/ClassTableModel.java</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/Icons/checked.png</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/controllers/XetNghiemPanelController.java</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/views/MainFrame.java</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/controllers/CachLyManagerController/ChoosePeopleCachLyController.java</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/services/MysqlConnection.java</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/controllers/HomeCotroller.java</file>
-            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project-nhom-g/NMCNPM.KSTN.20211-Nhom5-master/src/controllers/CachLyManagerController/AddNewCachLyController.java</file>
+            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project/src/models/PhanAnhModel.java</file>
+            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project/src/views/PhanAnhManagerFrame/ChoosePeoplePhanAnh.java</file>
+            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project/src/views/PhanAnhManagerFrame/ChinhSuaPhanAnh.java</file>
+            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project/src/controllers/PhanAnhManagerController/ThemMoiController.java</file>
+            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project/src/services/PhanAnhService.java</file>
+            <file>file:/D:/Trong-20221/NM-cong-nghe-phan-mem/project/src/controllers/LoginController.java</file>
         </group>
     </open-files>
 </project-private>
